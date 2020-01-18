@@ -7,14 +7,15 @@ module.exports = {
     addRecipe: (req,res) => {
         const {img, recipe_title, recipe, name, location} = req.body
         const recipeObj = {
-            id: id++,
+            id: id,
             img: img || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDOOThfyWmqpTFJH7fHPKdBKYrKpyaBR18HITvbaZkFqgyEYFJ1g&s',
             recipe_title,
             recipe,
             name,
             location,
         }
-        allRecipes.push(recipeObj)
+        id++
+        allRecipes.unshift(recipeObj)
         res.status(200).send(allRecipes)
     },
     editRecipe: (req,res) => {
