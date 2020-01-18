@@ -4,7 +4,7 @@ class Header extends Component{
     constructor(props){
         super(props)
         this.state = {
-            img: '',
+            image: '',
             recipe_title: '',
             recipe: '',
             name: '',
@@ -21,8 +21,8 @@ class Header extends Component{
         this.setState({addToggle: !this.state.addToggle})
     }
     handleAdd = () => {
-        const {img,recipe_title,recipe,name,location} = this.state
-        this.props.addFn({img,recipe_title,recipe,name,location})
+        const {image,recipe_title,recipe,name,location} = this.state
+        this.props.addFn({image,recipe_title,recipe,name,location})
         this.toggleAdd()
     }
 
@@ -33,7 +33,7 @@ class Header extends Component{
                 {this.state.addToggle === true && 
                 <div>
                     <p>Picture:</p> 
-                    <input onChange={(e)=>this.handleInput(e.target)} value={this.state.img} name='img' />
+                    <input onChange={(e)=>this.handleInput(e.target)} value={this.state.image} name='image' />
                     <p>Recipe Name:</p>
                     <input onChange={(e)=>this.handleInput(e.target)} value={this.state.recipe_title} name='recipe_title' />
                     <p>Recipe:</p>

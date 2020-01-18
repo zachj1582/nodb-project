@@ -5,10 +5,10 @@ module.exports = {
         res.status(200).send(allRecipes)
     },
     addRecipe: (req,res) => {
-        const {img, recipe_title, recipe, name, location} = req.body
+        const {image, recipe_title, recipe, name, location} = req.body
         const recipeObj = {
             id: id,
-            img: img || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDOOThfyWmqpTFJH7fHPKdBKYrKpyaBR18HITvbaZkFqgyEYFJ1g&s',
+            image: image || 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDOOThfyWmqpTFJH7fHPKdBKYrKpyaBR18HITvbaZkFqgyEYFJ1g&s',
             recipe_title,
             recipe,
             name,
@@ -20,11 +20,11 @@ module.exports = {
     },
     editRecipe: (req,res) => {
         const {id} = req.params
-        const {img, recipe_title, recipe, name, location} = req.body
+        const {image, recipe_title, recipe, name, location} = req.body
         const index = allRecipes.findIndex(e => e.id === +id)
         allRecipes[index] = {
             id: id,
-            img,
+            image,
             recipe_title,
             recipe,
             name,

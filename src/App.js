@@ -9,7 +9,6 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      list: [],
       recipes: [],
       randRecipes: []
     };
@@ -18,8 +17,8 @@ class App extends Component {
   componentDidMount(){
     axios.get('http://localhost:5555/api/recipes').then(res => {
     let list = []
-    for(let i = 0; i <= 15; i++) {
-         list.push(res.data[Math.ceil(Math.random() * 100)])}
+    for(let i = 0; i < 15; i++) {
+         list.push(res.data[Math.ceil(Math.random() * 99)])}
     this.setState({recipes: res.data, randRecipes: list})
     }).catch(err => console.log(err));
   }
@@ -45,6 +44,8 @@ class App extends Component {
   render() {
     let recipes = this.state.recipes
     let randRecipes= this.state.randRecipes
+    console.log(recipes)
+    console.log(randRecipes)
 
     return(
         <div className="App">
