@@ -29,6 +29,10 @@ class Recipes extends Component {
 
 
     render(){
+        const onClick = {
+            transition: '1s',
+            transform: 'scale(2)'
+        }
         return(
             <div>
                 
@@ -46,14 +50,16 @@ class Recipes extends Component {
                     <input onChange={(e)=>this.handleInput(e.target)} value={this.state.location} name='location' />
                     <button onClick={() => this.handleEdit()}>Submit</button>
                 </div> :
-                <div><img src={this.props.recipe.image} alt='Foods!'/>
+                <div className='recipe' onClick={StyleSheet.recipeClicked}>
+                <img src={this.props.recipe.image} alt='Foods!'/>
+                <div id='name'>{this.props.recipe.name}</div>
+                <div id='city'>{this.props.recipe.location}</div>
                 <div>{this.props.recipe.recipe_title}</div>
                 <div>{this.props.recipe.recipe}</div>
-                <div>{this.props.recipe.name}</div>
-                <div>{this.props.recipe.location}</div>
-                <button onClick={this.toggleEdit}>Edit</button></div>
+                <button id='button1' onClick={this.toggleEdit}>Edit</button>
+                <button id='button2' onClick={()=>this.props.deleteRecipe(this.props.id)}>Delete</button>
+                </div>
                 }
-                <button onClick={()=>this.props.deleteRecipe(this.props.id)}>Delete</button>
             </div>
         )
     }

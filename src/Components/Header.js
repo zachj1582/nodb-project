@@ -28,10 +28,20 @@ class Header extends Component{
 
     render(){
         return(
+            <div>
+
             <header id='header'>
-                <button onClick={this.toggleAdd}>Add Recipe</button>
-                {this.state.addToggle === true && 
-                <div>
+                <button id='add_recipe'onClick={this.toggleAdd}>Add Recipe</button>
+                
+                
+                <h1 id='logo'>Our Recipes</h1>
+                <input id='search' placeholder='Search'/>
+                
+            </header>
+            <div id='form_container'>
+
+            {this.state.addToggle === true && 
+                <div id='submit_form'>
                     <p>Picture:</p> 
                     <input onChange={(e)=>this.handleInput(e.target)} value={this.state.image} name='image' />
                     <p>Recipe Name:</p>
@@ -42,12 +52,11 @@ class Header extends Component{
                     <input onChange={(e)=>this.handleInput(e.target)} value={this.state.name} name='name' />
                     <p>City:</p>
                     <input onChange={(e)=>this.handleInput(e.target)} value={this.state.location} name='location' />
-                    <button onClick={() => this.handleAdd()}>Submit</button>
+                    <button id='submit_button' onClick={() => this.handleAdd()}>Submit</button>
                 </div> }
-                
-                <h1>Our Recipes</h1>
-                <input placeholder='Search'/>
-            </header>
+            
+                </div>
+            </div>
         )
     }
 }

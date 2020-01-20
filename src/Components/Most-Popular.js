@@ -7,9 +7,13 @@ function MostPopular(props){
     })
     
     return(
-            <div className='carousel-container'>
+            <div>
+                <div id='title'>
             <h1>Most Popular</h1>
+                </div>
+                <div className='carousel-container'>
             {list}
+                </div>
             </div>
         )
     }

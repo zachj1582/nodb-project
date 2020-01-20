@@ -6,11 +6,138 @@
 
 .App {
   text-align: center;
+  background-color: black;
+  color: aliceblue;
 }
 
 #header {
-  background-color: antiquewhite;
+  height: 10vh;
+  background-color: rgba(160, 4, 4, 0.835);
   display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#logo{
+  font-family: 'Kaushan Script', cursive;
+  height: 80px;
+  font-size: 65px;
+  color: rgb(255, 251, 0);
+  width: 400px;
+  font-stretch: wider;
+}
+
+#search{
+  height: 30px;
+  width: 150px;
+  text-align: center;
+  background-color: rgb(241, 234, 225);
+}
+
+#add_recipe{
+  height: 30px;
+  width: 150px;
+  background-color: rgb(241, 234, 225);
+}
+
+.carousel-container {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  -ms-overflow-style: -ms-autohiding-scrollbar;
+  scroll-snap-points-x: repeat(300px);
+  scroll-snap-type: mandatory;
+  align-items: flex-start;
   justify-content: space-around;
-  align-items: center;
+}
+
+#form_container{
+  display: flex;
+}
+
+#submit_form{
+  display: flex;
+  flex-direction: column;
+  padding-left: 20px;
+}
+
+#submit_button{
+  background-color: black;
+  color: rgb(241, 234, 225);
+  font-size: 15px;
+}
+
+#title{
+  padding-top: 40px;
+  color: rgb(255, 251, 0);
+  font-family: 'Anton', sans-serif;
+  text-decoration: underline;
+  text-decoration-color: rgb(253, 29, 29);
+}
+
+#all_recipes_head{
+  color: rgb(255, 251, 0);
+  font-family: 'Anton', sans-serif;
+  padding-top: 40px;
+  text-decoration: underline;
+  text-decoration-color: rgb(253, 29, 29);
+}
+
+#all_recipes{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: space-around;
+
+}
+
+.recipe{
+  height: 400px;
+  width: 200px;
+  padding: 40px 20px 0px 20px;
+  overflow: hidden;
+  position: relative;
+  
+}
+.recipe:hover{
+  transform:scale(1.2);
+  box-shadow: 3px 3px 5px 6px rgba(255, 255, 255, 0.5);
+  z-index: 1;
+}
+.recipeClicked{
+  transition-duration: 1s;
+  transform: scale(2);
+}
+
+
+img{
+  height: 200px;
+  width: 200px;
+}
+
+#button1{
+  position: absolute;
+  bottom: 0px;
+  width: 100px;
+  height: 15px;
+  left: 20px;
+  border-radius: 5px;
+  background-color: rgb(241, 234, 225);
+}
+
+#button2{
+  position: absolute;
+  bottom: 0px;
+  width: 100px;
+  height: 15px;
+  border-radius: 5px;
+  background-color: rgb(241, 234, 225);
+}
+
+@media (max-width: 650px){
+  #logo{
+    height: 60px;
+    font-size: 45px;
+  }
 }

@@ -14,8 +14,8 @@ class App extends Component {
     };
   }
 
-  componentDidMount(){
-    axios.get('http://localhost:5555/api/recipes').then(res => {
+  componentDidMount = () =>{
+    axios.get('/api/recipes').then(res => {
     let list = []
     for(let i = 0; i < 15; i++) {
          list.push(res.data[Math.ceil(Math.random() * 99)])}

@@ -6,8 +6,13 @@ const Categories = (props) => {
     })
     return (
         <div>
+            <div id='all_recipes_head'>
             <h1>All Recipes</h1>
+            </div>
+            <div id='all_recipes'>
             {list}
+            </div>
+
         </div>
     )
 }

@@ -23,7 +23,7 @@ module.exports = {
         const {image, recipe_title, recipe, name, location} = req.body
         const index = allRecipes.findIndex(e => e.id === +id)
         allRecipes[index] = {
-            id: id,
+            id: +id,
             image,
             recipe_title,
             recipe,
