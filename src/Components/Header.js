@@ -34,7 +34,7 @@ class Header extends Component{
                 <button id='add_recipe'onClick={this.toggleAdd}>Add Recipe</button>
                 
                 
-                <h1 id='logo'>Our Recipes</h1>
+                <h1 id='logo'>The Food Spot!</h1>
                 <input id='search' placeholder='Search'/>
                 
             </header>
